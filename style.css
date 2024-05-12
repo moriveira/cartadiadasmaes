@@ -1,0 +1,269 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+:root {
+  --rHeart: #c9184a;
+  --lHeart: #ff4d6d;
+  --text: #800f2f;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.background {
+  background-image: url(img/WhatsApp\ Image\ 2023-12-17\ at\ 22.17.27.jpeg);
+}
+
+.valentines-day-card {
+  background-image: url(img/nuvem.jpg);
+  cursor: pointer;
+  position: relative;
+  width: 400px;
+  height: 300px;
+  background-color: var(--bgCard);
+  overflow: hidden;
+  border: 10px solid white;
+  border-radius: 10px;
+  box-shadow: 0 0 100px rgba(208, 16, 16, 0.4);
+  transition: all 400ms;
+}
+
+.valentines-day-card:hover {
+  width: 690px;
+  height: 720px;
+  transition: all 400ms;
+}
+
+.valentines-day-card:before {
+  position: absolute;
+  background-color: #ffb3c1;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  top: 140px;
+  left: -25px;
+  box-shadow: var(--bSBefore);
+}
+
+
+.clouds {
+  transition: all 400ms;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #fff0f3;
+  z-index: 5;
+  top: 225px;
+  left: -20px;
+  box-shadow: var(--bSClouds);
+}
+
+.valentines-day-card:hover .clouds {
+  width: 0px;
+  height: 0px;
+  transition: all 400ms;
+}
+
+.hearts {
+  position: absolute;
+  z-index: 2;
+  transition: all 400ms;
+}
+
+.heartOne {
+  position: absolute;
+  left: 100px;
+  top: 250px;
+  animation: up 4s linear forwards 1s;
+}
+
+.heartTwo {
+  position: absolute;
+  left: 270px;
+  top: 230px;
+  animation: up 5s linear forwards 1.8s;
+}
+
+.heartThree {
+  position: absolute;
+  left: 85px;
+  top: 415px;
+  animation: up 5s linear forwards 3s;
+  transition: all 400ms;
+}
+
+.heartFour {
+  position: absolute;
+  left: 320px;
+  top: 380px;
+  animation: upTwo 9s linear infinite 3.5s;
+  transition: all 400ms;
+}
+
+.heartFive {
+  position: absolute;
+  left: 150px;
+  top: 400px;
+  animation: upTwo 13s linear infinite 4.5s;
+  transition: all 400ms;
+}
+
+.valentines-day-card:hover .heartOne,.valentines-day-card:hover .heartTwo,.valentines-day-card:hover .heartThree,.valentines-day-card:hover .heartFour,.valentines-day-card:hover .heartFive {
+  opacity: 0%;
+  transition: all 150ms;
+}
+
+
+.right-side:before,
+.right-side:after {
+  position: absolute;
+  content: "";
+  transform-origin: left;
+  animation: move 1s ease infinite;
+}
+
+.right-side:before {
+  border-radius: 50% 50% 50% 0;
+  width: 21px;
+  height: 20px;
+  background-color: var(--rHeart);
+  left: -0.26px;
+}
+
+.right-side:after {
+  height: 0;
+  width: 0;
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid var(--rHeart);
+  top: 19px;
+  left: -0.26px;
+}
+
+@keyframes move {
+  0%,
+  100% {
+    transform: rotateY(0);
+  }
+  50% {
+    transform: rotateY(-45deg);
+  }
+}
+
+.left-side:before,
+.left-side:after {
+  position: absolute;
+  content: "";
+  transform-origin: right;
+  animation: move 1s ease infinite;
+}
+
+.left-side:before {
+  border-radius: 50% 50% 0 50%;
+  width: 20px;
+  height: 20px;
+  left: -20.7px;
+  background-color: var(--lHeart);
+}
+
+.left-side:after {
+  height: 0;
+  width: 0;
+  left: -15px;
+  border-bottom: 10px solid transparent;
+  border-right: 15px solid var(--lHeart);
+  top: 19px;
+}
+
+@keyframes up {
+  0% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-200px);
+    -webkit-transform: translateY(-200px);
+    -moz-transform: translateY(-200px);
+    -ms-transform: translateY(-200px);
+    -o-transform: translateY(-200px);
+  }
+}
+
+@keyframes upTwo {
+  0% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-450px);
+  }
+}
+
+.text {
+  position: absolute;
+  color: var(--text);
+  font-size: 30px;
+  font-family: "Pacifico", cursive;
+  line-height: 1;
+  text-align: center;
+  width: 380px;
+  left: 10px;
+  z-index: 3;
+  top: 320px;
+  animation: up 1s ease forwards;
+  transition: all 400ms;
+}
+
+.hover {
+  color: white;
+  font-family: "Pacifico", cursive;
+  text-align: center;
+  transition: all 400ms;
+}
+
+.text:hover {
+  transition: all 400ms;
+}
+
+
+.valentines-day-card:hover .text {
+  transition: all 400ms;
+  margin-top: -80px;
+}
+
+.page {
+  font-size: 0px;
+}
+
+.valentines-day-card:hover .page {
+  transition: all 400ms;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-top: 80px;
+  font-size: 26px;
+  font-family: "Caveat", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.feliz h1 {
+  opacity: 0%;
+  font-family: "La Belle Aurore", cursive;
+  margin-top: -20px;
+  text-align: center;
+}
+
+.valentines-day-card:hover .feliz h1 {
+  opacity: 100%;
+}
